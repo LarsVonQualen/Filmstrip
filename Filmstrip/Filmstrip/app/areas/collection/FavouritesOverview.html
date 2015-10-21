@@ -2,7 +2,7 @@
     <tbody>
         <tr ng-repeat="favourite in vm.favourites">
             <td class="snug text-center">
-                <img ng-if="favourite.Poster !== 'N/A'" ng-src="{{favourite.Poster}}" />
+                <img ng-if="favourite.Poster !== 'N/A'" ng-src="/ImageProxy/?url={{favourite.Poster}}" />
             </td>
             <td>
                 <div class="pull-right">

@@ -2,7 +2,7 @@
     <tbody>
         <tr ng-repeat="entry in vm.collection">
             <td class="snug text-center">
-                <img ng-if="entry.Poster !== 'N/A'" ng-src="{{entry.Poster}}" />
+                <img ng-if="entry.Poster !== 'N/A'" ng-src="/ImageProxy/?url={{entry.Poster}}" />
             </td>
             <td>
                 <div class="pull-right">
