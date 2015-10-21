@@ -1,0 +1,29 @@
+﻿@import 'bootswatch/_variables.scss';
+@import '../wwwroot/lib/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+@import 'bootswatch/_bootswatch.scss';
+
+body {
+    margin-top: $navbar-height;
+    padding-top: 1em;
+}
+
+.table {
+    .snug {
+        width: 1%;
+        white-space: nowrap;
+        padding: 0 !important;
+
+        img {
+            width: 140px;
+        }
+    }
+}
+
+.row {
+    margin-bottom: 1em;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}

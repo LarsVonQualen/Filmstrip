@@ -1,0 +1,14 @@
+﻿<form ng-submit="vm.performSearch()">
+    <div class="input-group">
+        <input type="text"
+               class="form-control"
+               placeholder="Search for movie/series/episode..."
+               ng-model="vm.query"
+               ng-disabled="busy"
+               required />
+        <span class="input-group-btn">
+            <button class="btn btn-primary" 
+                    type="submit"><i class="fa" ng-class="{'fa-search': !busy, 'fa-refresh': busy, 'fa-spin': busy}"></i> Go</button>
+        </span>
+    </div>
+</form>

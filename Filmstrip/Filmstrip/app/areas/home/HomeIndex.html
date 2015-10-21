@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <omni-search on-result="vm.onSearchResult(results)" busy="vm.searching"></omni-search>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table" ng-if="!vm.searching">
+            <tbody>
+            <tr ng-repeat="result in vm.searchResults">
+                <td class="snug">
+                    <img ng-if="result.Poster !== 'N/A'" ng-src="{{result.Poster}}"/>
+                </td>
+                <td>
+                    <div class="pull-right">
+                        <button type="button"
+                                class="btn btn-danger"
+                                uib-tooltip="Add to Favourites"
+                                ng-click="vm.addToFavourites(result)"
+                                ng-if="!vm.alreadyFavourited(result)"><i class="fa fa-heart"></i></button>
+                        <button type="button"
+                                class="btn btn-success"
+                                uib-tooltip="Add to Collection"
+                                ng-click="vm.addToCollection(result)"
+                                ng-if="!vm.alreadyInCollection(result)"><i class="fa fa-plus"></i></button>
+                        <a ui-sref="home-details({imdbId: result.imdbID})" class="btn btn-default" uib-tooltip="More details">Details</a>
+                    </div>
+                    <h4 class="list-group-item-heading">{{result.Title}} ({{result.Year}})</h4>
+                    <p class="list-group-item-text">
+                        <span class="label label-default text-capitalize" ng-if="result.Type === 'episode'">Episode</span>
+                        <span class="label label-primary text-capitalize" ng-if="result.Type === 'series'">Series</span>
+                        <span class="label label-success text-capitalize" ng-if="result.Type === 'movie'">Movie</span>
+                    </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p ng-if="vm.searching" class="text-center"><i class="fa fa-refresh fa-spin fa-2x"></i></p>
+    </div>
+</div>

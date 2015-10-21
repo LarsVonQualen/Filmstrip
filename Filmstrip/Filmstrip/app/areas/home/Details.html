@@ -1,0 +1,42 @@
+﻿<div class="row">
+    <div class="col-xs-12">
+        <p ng-if="!vm.initialized" class="text-center"><i class="fa fa-refresh fa-spin fa-2x"></i></p>
+        <table class="table" ng-if="vm.initialized">
+            <tbody>
+            <tr>
+                <td class="snug text-center">
+                    <img ng-if="vm.entry.Poster !== 'N/A'" ng-src="{{vm.entry.Poster}}" fancyboxable/>
+                </td>
+                <td>
+                    <div class="pull-right">
+                        <button type="button"
+                                class="btn btn-danger"
+                                uib-tooltip="Add to Favourites"
+                                ng-click="vm.addToFavourites(vm.entry)"
+                                ng-if="!vm.alreadyFavourited(vm.entry)"><i class="fa fa-heart"></i></button>
+                        <button type="button"
+                                class="btn btn-success"
+                                uib-tooltip="Add to Collection"
+                                ng-click="vm.addToCollection(vm.entry)"
+                                ng-if="!vm.alreadyInCollection(vm.entry)"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <h4>{{vm.entry.Title}} ({{vm.entry.Year}})</h4>
+                    <p>
+                        <span class="label label-info">{{vm.entry.Rated}}</span>
+                        <span class="label label-default text-capitalize" ng-if="vm.entry.Type === 'episode'">Episode</span>
+                        <span class="label label-primary text-capitalize" ng-if="vm.entry.Type === 'series'">Series</span>
+                        <span class="label label-success text-capitalize" ng-if="vm.entry.Type === 'movie'">Movie</span>
+                    </p>
+                    <p>{{vm.entry.Plot}}</p>
+                    <dl>
+                        <dt>Actors:</dt>
+                        <dd>{{vm.entry.Actors}}</dd>
+                        <dt>Awards:</dt>
+                        <dd>{{vm.entry.Awards}}</dd>
+                    </dl>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

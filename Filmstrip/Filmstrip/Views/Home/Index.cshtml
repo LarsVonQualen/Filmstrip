@@ -1,0 +1,37 @@
+﻿<!doctype HTML>
+<html ng-app="fs">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Filmstrip</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/app.min.css")" />
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a ui-sref="home-index" class="navbar-brand">Filmstrip</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home-index">Home</a></li>
+            <li><a ui-sref="collection.favourites">Collection</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" ui-view></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="text-muted text-center"><small>Copyright 2015 &copy; Lars von Qualen.... lol j/k</small></p>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/libs")
+@Scripts.Render("~/bundles/app")
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<table class="table table-hover">
+    <tbody>
+        <tr ng-repeat="entry in vm.collection">
+            <td class="snug text-center">
+                <img ng-if="entry.Poster !== 'N/A'" ng-src="{{entry.Poster}}" />
+            </td>
+            <td>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger" uib-tooltip="Remove from collection" ng-click="vm.removeFromCollection(entry)"><i class="fa fa-trash"></i></button>
+                </div>
+                <h4>{{entry.Title}} ({{entry.Year}})</h4>
+                <p>
+                    <span class="label label-info">{{entry.Rated}}</span>
+                    <span class="label label-default text-capitalize" ng-if="entry.Type === 'episode'">Episode</span>
+                    <span class="label label-primary text-capitalize" ng-if="entry.Type === 'series'">Series</span>
+                    <span class="label label-success text-capitalize" ng-if="entry.Type === 'movie'">Movie</span>
+                </p>
+                <p>{{entry.Plot}}</p>
+                <dl>
+                    <dt>Actors:</dt>
+                    <dd>{{entry.Actors}}</dd>
+                    <dt>Awards:</dt>
+                    <dd>{{entry.Awards}}</dd>
+                </dl>
+            </td>
+        </tr>
+    </tbody>
+</table>
