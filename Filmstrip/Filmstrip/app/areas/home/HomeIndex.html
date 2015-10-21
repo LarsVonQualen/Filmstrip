@@ -9,7 +9,7 @@
             <tbody>
             <tr ng-repeat="result in vm.searchResults">
                 <td class="snug">
-                    <img ng-if="result.Poster !== 'N/A'" ng-src="{{result.Poster}}"/>
+                    <img ng-if="result.Poster !== 'N/A'" ng-src="/ImageProxy/?url={{result.Poster}}"/>
                 </td>
                 <td>
                     <div class="pull-right">

@@ -123,6 +123,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageProxyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -294,6 +295,7 @@
     <Folder Include="app\filters\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ImageProxy\" />
     <Folder Include="wwwroot\lib\angular-ui-router\api\" />
     <Folder Include="wwwroot\lib\bootstrap-sass\assets\images\" />
   </ItemGroup>
@@ -431,6 +433,7 @@
     <Content Include="wwwroot\lib\lodash\.bower.json" />
     <Content Include="wwwroot\lib\lodash\bower.json" />
     <Content Include="wwwroot\lib\lodash\LICENSE" />
+    <None Include="Properties\PublishProfiles\filmstrip.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.config.ts" />
