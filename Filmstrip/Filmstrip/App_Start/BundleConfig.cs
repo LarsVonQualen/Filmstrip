@@ -19,8 +19,6 @@ namespace Filmstrip
                 "~/wwwroot/lib/angular-local-storage/dist/angular-local-storage.js"
                 );
 
-            libs.Transforms.Clear();
-
             var app = new ScriptBundle("~/bundles/app");
 
             // Ensure the order is correct
@@ -30,8 +28,6 @@ namespace Filmstrip
                 ); 
 
             app.IncludeDirectory("~/app/", "*.js", true);
-
-            app.Transforms.Clear();
 
             bundles.Add(libs);
             bundles.Add(app);
