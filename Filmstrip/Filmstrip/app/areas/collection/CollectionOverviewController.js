@@ -9,9 +9,11 @@ var Filmstrip;
                     var _this = this;
                     this.storageService = storageService;
                     this.collection = [];
+                    this.initialized = false;
                     storageService
                         .all(Filmstrip.Services.StorageService.Collection)
-                        .then(function (collection) { return _this.collection = collection; });
+                        .then(function (collection) { return _this.collection = collection; })
+                        .finally(function () { return _this.initialized = true; });
                 }
                 CollectionOverviewController.prototype.removeFromCollection = function (entry) {
                     var _this = this;

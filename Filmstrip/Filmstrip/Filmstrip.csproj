@@ -130,6 +130,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\areas\about\About.html" />
     <Content Include="app\areas\collection\CollectionAbstract.html" />
     <Content Include="app\areas\collection\CollectionOverview.html" />
     <Content Include="app\areas\collection\FavouritesOverview.html" />

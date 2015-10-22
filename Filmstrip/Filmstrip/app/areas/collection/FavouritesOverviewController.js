@@ -9,9 +9,11 @@ var Filmstrip;
                     var _this = this;
                     this.storageService = storageService;
                     this.favourites = [];
+                    this.initialized = false;
                     storageService
                         .all(Filmstrip.Services.StorageService.Favourites)
-                        .then(function (favourites) { return _this.favourites = favourites; });
+                        .then(function (favourites) { return _this.favourites = favourites; })
+                        .finally(function () { return _this.initialized = true; });
                 }
                 FavouritesOverviewController.prototype.removeFromFavourites = function (favourite) {
                     var _this = this;

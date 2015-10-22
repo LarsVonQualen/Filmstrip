@@ -3,13 +3,15 @@
         public static $inject = ["StorageService"];
 
         public favourites: Array<Models.DetailedResult> = [];
+        public initialized: boolean = false;
 
         constructor(
             private storageService: Services.StorageService
         ) {
             storageService
                 .all<Models.DetailedResult>(Services.StorageService.Favourites)
-                .then(favourites => this.favourites = favourites);
+                .then(favourites => this.favourites = favourites)
+                .finally(() => this.initialized = true);
         }
 
         public removeFromFavourites(favourite: Models.DetailedResult) {

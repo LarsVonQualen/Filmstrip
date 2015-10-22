@@ -3,13 +3,15 @@
         public static $inject = ["StorageService"];
 
         public collection: Array<Models.DetailedResult> = [];
+        public initialized: boolean = false;
 
         constructor(
             private storageService: Services.StorageService
         ) {
             storageService
                 .all<Models.DetailedResult>(Services.StorageService.Collection)
-                .then(collection => this.collection = collection);
+                .then(collection => this.collection = collection)
+                .finally(() => this.initialized = true);
         }
 
         public removeFromCollection(entry: Models.DetailedResult) {

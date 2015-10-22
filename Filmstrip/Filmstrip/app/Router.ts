@@ -11,6 +11,7 @@
         ) {
             this.registerHomeArea();
             this.registerCollectionArea();
+            this.registerAboutArea();
 
             $urlRouterProvider.otherwise("/");
         }
@@ -28,6 +29,13 @@
                 controller: "DetailsController",
                 controllerAs: "vm",
                 templateUrl: "/app/areas/home/Details.html"
+            });
+        }
+
+        private registerAboutArea() {
+            this.$stateProvider.state("about", {
+                url: "/about",
+                templateUrl: "/app/areas/about/About.html"
             });
         }
 

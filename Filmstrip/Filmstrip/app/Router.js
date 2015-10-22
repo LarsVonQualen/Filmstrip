@@ -6,6 +6,7 @@ var Filmstrip;
             this.$urlRouterProvider = $urlRouterProvider;
             this.registerHomeArea();
             this.registerCollectionArea();
+            this.registerAboutArea();
             $urlRouterProvider.otherwise("/");
         }
         Router.prototype.registerHomeArea = function () {
@@ -20,6 +21,12 @@ var Filmstrip;
                 controller: "DetailsController",
                 controllerAs: "vm",
                 templateUrl: "/app/areas/home/Details.html"
+            });
+        };
+        Router.prototype.registerAboutArea = function () {
+            this.$stateProvider.state("about", {
+                url: "/about",
+                templateUrl: "/app/areas/about/About.html"
             });
         };
         Router.prototype.registerCollectionArea = function () {

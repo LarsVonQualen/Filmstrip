@@ -1,4 +1,8 @@
-﻿<table class="table table-hover">
+﻿<p class="well well-sm" ng-if="!vm.initialized"><i class="fa fa-refresh fa-spin fa-2x"></i></p>
+
+<p class="well well-sm" ng-if="vm.initialized && !vm.collection.length">You don't have any entries in your collection yet :-)</p>
+
+<table class="table table-hover" ng-if="vm.initialized && vm.collection.length > 0">
     <tbody>
         <tr ng-repeat="entry in vm.collection">
             <td class="snug text-center">
@@ -14,6 +18,7 @@
                     <span class="label label-default text-capitalize" ng-if="entry.Type === 'episode'">Episode</span>
                     <span class="label label-primary text-capitalize" ng-if="entry.Type === 'series'">Series</span>
                     <span class="label label-success text-capitalize" ng-if="entry.Type === 'movie'">Movie</span>
+                    <span class="label label-warning text-capitalize" ng-if="entry.Type === 'game'">Game</span>
                 </p>
                 <p>{{entry.Plot}}</p>
                 <dl>
